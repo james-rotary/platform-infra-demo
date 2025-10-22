@@ -1,20 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: pim-backend-dev
+  name: cockroachdb-dev
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/james-rotary/pim-backend-config.git
+    repoURL: https://github.com/james-rotary/platform-infra-demo.git
     targetRevision: development
-    path: overlays/dev
+    path: cockroachdb
   destination:
     server: https://kubernetes.default.svc
-    namespace: pim
+    namespace: crdb
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+  revisionHistoryLimit: 5
