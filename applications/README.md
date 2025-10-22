@@ -5,7 +5,6 @@ This directory defines Argo CD `Application` resources that manage all MaxPower 
 ## Applications
 - `cockroachdb-dev`: Bootstraps CockroachDB (logical DB creation handled by Job in kustomization).
 - `pim-backend-dev`: PIM backend API (runs Prisma migrations via PreSync hook Job).
-- `web-content-dev`: Web content API (Prisma migrations via PreSync hook Job).
 - `web-admin-frontend-dev`: Admin UI.
 - `maxpower-frontend-dev`: Public-facing UI.
 
