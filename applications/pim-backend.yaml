@@ -11,7 +11,7 @@ spec:
     path: overlays/dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: pim-backend
+    namespace: pim
   syncPolicy:
     automated:
       prune: true
