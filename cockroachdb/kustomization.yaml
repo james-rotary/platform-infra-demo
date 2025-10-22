@@ -1,0 +1,12 @@
+namespace: crdb
+resources:
+  - namespace.yaml
+  - services.yaml
+  - cockroachdb-statefulset.yaml
+  - bootstrap-sql-job.yaml
+configMapGenerator:
+  - name: logical-db-init
+    files:
+      - sql/init-logical-dbs.sql
+generatorOptions:
+  disableNameSuffixHash: true

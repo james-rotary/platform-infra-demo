@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: web-admin-frontend-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/james-rotary/web-admin-frontend-config.git
+    targetRevision: development
+    path: overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: web-admin-frontend
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
