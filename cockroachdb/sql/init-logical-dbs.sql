@@ -6,8 +6,8 @@ CREATE DATABASE IF NOT EXISTS web_content_db;
 -- Future: CREATE DATABASE IF NOT EXISTS auth_db;
 
 -- Application roles (sample insecure passwords for dev; replace with secrets)
-CREATE ROLE IF NOT EXISTS pim_app LOGIN PASSWORD 'dev-pim-pass';
-CREATE ROLE IF NOT EXISTS web_content_app LOGIN PASSWORD 'dev-web-pass';
+CREATE ROLE IF NOT EXISTS pim_app LOGIN;
+CREATE ROLE IF NOT EXISTS web_content_app LOGIN;
 
 GRANT CONNECT ON DATABASE app_db TO pim_app;
 GRANT CONNECT ON DATABASE web_content_db TO web_content_app;
